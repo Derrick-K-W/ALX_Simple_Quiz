@@ -3,13 +3,16 @@ function checkAnswer() {
     // The correct answer
     const correctAnswer = "4";
 
-    // Get the selected radio button value (user's answer)
-    const userAnswer = document.querySelector('input[name="quiz"]:checked');
+    // Get the selected radio button element (user's answer)
+    const userAnswerElement = document.querySelector('input[name="quiz"]:checked');
 
     // Check if an answer is selected
-    if (userAnswer) {
-        // Compare the selected answer value with the correct answer
-        if (userAnswer.value === correctAnswer) {
+    if (userAnswerElement) {
+        // Extract the value from the selected radio button element
+        const userAnswer = userAnswerElement.value;
+
+        // Now compare the selected answer directly with the correct answer
+        if (userAnswer === correctAnswer) {
             // Display feedback for the correct answer
             document.getElementById("feedback").textContent = "Correct! Well done.";
         } else {
